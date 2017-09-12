@@ -47,7 +47,13 @@ Sequence of Flow - Invoke Objects with Behaviors
  HotelBookingSite expedia
  
  yiteng.loginToAccount -> reachnow : authorize
- reachnow.searchCar -> priceRange, carColor, carMaker,rentTimeRange: collection of cars
+ reachnow.searchCar -> priceRange, carColor, carMaker,rentTimeRange: collection of car
+ bmw = car
+ yiteng.rentCar -> bmw, creditCard, address, reachnow : rentConfirmation
+ response = rentConfirmation
+ yiteng.searchGasStation
+ car.fillGas
+ 
  
 
 

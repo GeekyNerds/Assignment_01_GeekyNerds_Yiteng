@@ -6,14 +6,15 @@ Scenario:  1. Hiking
  1.4. Buy the ticket to get into the park
  1.5. Book a hotel or check in the hotel.
  
- 
+Identify Objects and Behaviors:
+
  Object : Hiker
- Data : name, email, phone
- Behaviors : 
+ Data : name, email, phone, username, password
+ Behaviors : loginToAccount
  
- Object : ReachNow
- Data : url, carList, rentTimeRange, rentPrice, 
- Behaviors : search, sort, display, compare , placeTheOrder 
+ Object : CarRentalSite
+ Data : url, carColor, carMaker, priceRange, rentTimeRange, 
+ Behaviors : searchCar, sort, display, compare , placeTheOrder 
  
  Object : Car
  Data : maker, color, plateNumber
@@ -27,10 +28,28 @@ Scenario:  1. Hiking
  Data : resName, resLocation, menu, mealPrice, tips,
  Behaviors : 
 
- Object : RainierPark
+ Object : Park
  Data : ticketPrice, pointOfInterest, openTime
  Behaviors : 
  
- Object : Expedia
+ Object : hotelBookingSite
  Data : url, hotelList, checkInDate, checkOutDate, hotelPrice, 
  Behaviors : 
+
+Sequence of Flow - Invoke Objects with Behaviors
+ 
+ Hiker yiteng
+ CarRentalSite reachnow
+ Car bmw
+ GasStation chevron
+ Restaurant kfc
+ Park rainierPark
+ HotelBookingSite expedia
+ 
+ yiteng.loginToAccount -> reachnow : authorize
+ reachnow.searchCar -> priceRange, carColor, carMaker,rentTimeRange: collection of cars
+ 
+
+
+
+

@@ -55,7 +55,7 @@ else
    student.finishAssignment
 end
 
-serena.markAssignment
-harsha.markAssignment
+serena.gradeAssignment
+harsha.gradeAssignment
 
 		

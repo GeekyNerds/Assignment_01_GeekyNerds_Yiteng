@@ -30,27 +30,25 @@ student.feedback -> student: feedback 0. siva-level hard 1. so-so 2. piece of ca
 if feedback.isAvailable
 
  Loop
-	
-		if student.feedback: 1. so-so or 2. piece of cake
-			 student.finishAssignment
-       break
-		end
-		
-		if student.feedback: 0. siva-level hard
-       serena.editAssignment -> texteditor: input an easier assignment
- 			 harsha.editAssignment -> texteditor: input an easier assignment
-		   serena.gitPush -> github: add, commit, push the assignment
-       harsha.gitPush -> github: add, commit, push the assignment
-		   student.gitPull -> github: pull the latest version of assignment
-			 student.feedback
-    end
-			
-
-		else
-			 student.finishAssignment
-	  end
-	
-	End
+      if student.feedback: 1. so-so or 2. piece of cake
+         student.finishAssignment
+         break
+      end
+      
+      if student.feedback: 0. siva-level hard
+         serena.editAssignment -> texteditor: input an easier assignment
+         harsha.editAssignment -> texteditor: input an easier assignment
+         serena.gitPush -> github: add, commit, push the assignment
+         harsha.gitPush -> github: add, commit, push the assignment
+         student.gitPull -> github: pull the latest version of assignment
+         student.feedback
+      end
+      
+      
+      else
+         student.finishAssignment
+      end
+ End
 
 
 else

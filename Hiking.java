@@ -9,31 +9,35 @@ Scenario:  1. Hiking
 Identify Objects and Behaviors:
 
  Object : Hiker
- Data : name, email, phone, username, password
+ Attribute : name, email, phone, username, password
  Behaviors : loginToAccount
  
  Object : CarRentalSite
- Data : url, carColor, carMaker, priceRange, rentTimeRange, 
+ Attribute : url, carColor, carMaker, priceRange, rentTimeRange, 
  Behaviors : searchCar, sort, display, compare , placeTheOrder 
  
  Object : Car
- Data : maker, color, plateNumber
+ Attribute : maker, color, plateNumber
  Behaviors : fillGas
  
+ Object : Gas
+ Attribute : gasType, gasPrice
+ Behaviors : 
+ 
  Object : GasStation
- Data : gasType, gasPrice, gasPumpNumber
+ Attribute : gasStationName, gasStationLocation, gasPumpNumber, 
  Behaviors : 
  
  Object : Restaurant
- Data : resName, resLocation, menu, mealPrice, tips,
+ Attribute : resName, resLocation, menu, mealPrice, tips,
  Behaviors : 
 
  Object : Park
- Data : ticketPrice, pointOfInterest, openTime
+ Attribute : ticketPrice, pointOfInterest, openTime
  Behaviors : 
  
  Object : hotelBookingSite
- Data : url, hotelList, checkInDate, checkOutDate, hotelPrice, 
+ Attribute : url, hotelList, checkInDate, checkOutDate, hotelPrice, 
  Behaviors : 
 
 Sequence of Flow - Invoke Objects with Behaviors

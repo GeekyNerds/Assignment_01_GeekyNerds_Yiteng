@@ -9,8 +9,8 @@
 //Identify Objects and Behaviors://
 
  Object : Hiker
- Attribute : name, emailAddr, phoneNumber, username, password, signature
- Behaviors : loginToAccount(), pressCarBrake(), pressCarAccelerate(), makePayment()
+ Attribute : name, emailAddr, billingAddr, phoneNumber, username, password, signature
+ Behaviors : loginToAccount(), pressCarBrake(), pressCarAccelerate(), rotateSteerWheel(), makePayment()
  
  Object : CarRentalSite
  Attribute : url, carColor, carMaker, priceRange, rentTimeRange, 
@@ -22,7 +22,7 @@
  
  Object : Car
  Attribute : carMaker, carColor, plateNumber
- Behaviors : fillGas()
+ Behaviors : driveWheel()
   
  Object : CreditCard
  Attribute : cardNumber, expireMonth, expireYear, securityNumber
@@ -42,17 +42,21 @@
  
  Object : GasStation
  Attribute : gasStationName, gasStationLocation, gasPumpNumber, 
- Behaviors : 
+ Behaviors : outputGas()
  
  Object : Restaurant
- Attribute : resName, resLocation, menu, mealPrice, tips,
- Behaviors : 
+ Attribute : resName, resLocation
+ Behaviors : makeMeal
+
+ Object : Menu
+ Attribute : mealName, mealPrice
+ Behaviors :  
 
  Object : Park
  Attribute : ticketPrice, pointOfInterest, openTime
  Behaviors : 
  
- Object : hotelBookingSite
+ Object : HotelBookingSite
  Attribute : url, hotelList, checkInDate, checkOutDate, hotelPrice, 
  Behaviors : 
 
@@ -63,6 +67,7 @@
  CarRentalSite reachnow
  CarRentalSiteLoginPage reachnowloginpage
  Car bmw
+ CreditCard visacard
  CreditCardCompany visa
  MapNavigator googlemaps
  GasStation chevron
@@ -71,27 +76,32 @@
  HotelBookingSite expedia
  
  //1.1. Rent a ReachNow BMW car using VISA credit card//
- yiteng.loginToAccount() -> username, password -> reachnow : authorize & return reachnowloginpage
- rechnowloginpage.displayUserInfo()
- reachnow.searchCar() -> priceRange, carColor, carMaker,rentTimeRange -> reachnow : return collection of car
- bmw = car
- yiteng.rentCar() -> bmw, cardNumber, expireMonth, expireYear, securityNumber, address -> visa.authorizeCard() -> reachnow : return rentConfirmation
+ yiteng.loginToAccount() -> username, password -> reachnow : authorize & return LoginConfirmation object
+ reachnow.searchCar() -> priceRange, carColor, carMaker,rentTimeRange -> reachnow : return Car object collection
+ bmw = Car // choose BMW car (initialize Car object)
+ yiteng.rentCar() -> bmw, CreditCard -> visa.authorizeCard()
+ reachnow : return CarRentConfirmation object
  
  //1.2. On the way, use Google Maps to find route to Chevron gas station, make payment using VISA card, then fill the gas//
- googlemaps.getNearbyPlaceOfInterest() -> gasStationName -> googlemaps.getRoute()
+ googlemaps.getNearbyPlaceOfInterest() -> gasStationName -> googlemaps.getRoute() -> googlemaps: return Route object
  yiteng.pressCarAccelerate()
+ yiteng.rotateSteerWheel()
  yiteng.pressCarBrake()
- yiteng.makePayment() -> cardNumber, expireMonth, expireYear, securityNumber, signature, gasType, gasPrice, gasAmount -> visa.authorizeCard()
- bmw.fillGas()
+ yiteng.makePayment() -> CreditCard, gasType, gasPrice, gasAmount -> visa.authorizeCard()
+ chevron: return GasPurchaseConfirmation object
+ chevron.outputGas()
   
  //1.3. On the way, use Google Maps to find route to KFC restaurant, make payment using VISA card, then have//
- googlemaps.getNearbyPlaceOfInterest() -> resName -> googlemaps.getRoute()
+ googlemaps.getNearbyPlaceOfInterest() -> resName -> googlemaps.getRoute() -> googlemaps: return Route object
  yiteng.pressCarAccelerate()
+ yiteng.rotateSteerWheel()
  yiteng.pressCarBrake()
- yiteng.creatOrder() -> dishName,credit
- kfc.placeOrder()
- yiteng.makePayment() -> cardNumber, expireMonth, expireYear, securityNumber, signature, orderTotal-> visa.authorizeCard()
- bmw.fillGas()
+ yiteng.creatOrder() -> Menu -> kfc: return OrderConfirmation object 
+ yiteng.makePayment() -> CreditCard-> visa.authorizeCard()
+ kfc: return OrderPaidConfirmation object
+ kfc.makeMeal()
+  
+  
   
  
  

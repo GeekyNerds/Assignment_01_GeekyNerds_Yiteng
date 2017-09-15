@@ -25,7 +25,7 @@
  Behaviors : driveWheel()
   
  Object : CreditCard
- Attribute : cardNumber, expireMonth, expireYear, securityNumber
+ Attribute : cardNumber, expireMonth, expireYear, securityCode
  Behaviors : 
   
  Object : CreditCardCompany

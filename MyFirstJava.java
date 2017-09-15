@@ -1,5 +1,5 @@
 # GeekyNerds
-public class FirstBlood
+public class MyFirstJava
 {
     public static void main( String[] args ) 
     {

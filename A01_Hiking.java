@@ -112,7 +112,6 @@
  rainierPark: return TicketPaidConfirmation object
  rainierPark.issueTicket()
   
-  
  //1.5. Book Holiday Inn via Expedia website//
  yiteng.loginToAccount() -> username, password -> expedia : authorize & return LoginConfirmation object
  expedia.searchHotel() -> priceRange, hotelLocation, roomType, bookTimeRange -> expedia : return Hotel object collection

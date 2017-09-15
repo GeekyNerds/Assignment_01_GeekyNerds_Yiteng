@@ -9,7 +9,7 @@
 //Identify Objects and Behaviors://
 
  Object : Hiker
- Attribute : name, emailAddr, phoneNumber, username, password
+ Attribute : name, emailAddr, phoneNumber, username, password, signature
  Behaviors : loginToAccount(), pressCarBrake(), pressCarAccelerate(), makePayment()
  
  Object : CarRentalSite
@@ -37,7 +37,7 @@
  Behaviors : getRoute(), getNearbyPlaceOfInterest()
  
  Object : Gas
- Attribute : gasType, gasPrice
+ Attribute : gasType, gasPrice, gasAmount
  Behaviors : 
  
  Object : GasStation
@@ -81,8 +81,18 @@
  googlemaps.getNearbyPlaceOfInterest() -> gasStationName -> googlemaps.getRoute()
  yiteng.pressCarAccelerate()
  yiteng.pressCarBrake()
- yiteng.makePayment() -> cardNumber, expireMonth, expireYear, securityNumber, gasType, gasPrice -> visa.authorizeCard()
+ yiteng.makePayment() -> cardNumber, expireMonth, expireYear, securityNumber, signature, gasType, gasPrice, gasAmount -> visa.authorizeCard()
  bmw.fillGas()
+  
+ //1.3. On the way, use Google Maps to find route to KFC restaurant, make payment using VISA card, then have//
+ googlemaps.getNearbyPlaceOfInterest() -> resName -> googlemaps.getRoute()
+ yiteng.pressCarAccelerate()
+ yiteng.pressCarBrake()
+ yiteng.creatOrder() -> dishName,credit
+ kfc.placeOrder()
+ yiteng.makePayment() -> cardNumber, expireMonth, expireYear, securityNumber, signature, orderTotal-> visa.authorizeCard()
+ bmw.fillGas()
+  
  
  
  

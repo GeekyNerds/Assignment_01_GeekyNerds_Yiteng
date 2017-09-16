@@ -12,7 +12,7 @@
 //Identify Object and Behaviors:
 
 Object : VendingMachine
-Attribute : machineName, machineColor, machineMaker, location, Product[] products
+Attribute : machineName, machineColor, machineMaker, location, Product[][] products
 Behaviors : validateUserOrderInput(), showOrderPrice(), validateMoneyInput(), outputProduct(), updateInventory(),
             alertLowInventory()
 

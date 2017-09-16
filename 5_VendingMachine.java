@@ -19,7 +19,7 @@ Behaviors : validateUserOrderInput(), showOrderPrice(), validateMoneyInput(), ou
            
 public class VendingMachine{
      string location;
-     string[][] product; // two-dimension array e.g. {{"001","coke"},{"002","cookie"},...}
+     string[][] product; // two-dimension array e.g. {{"001","coke"},{"002","cookie"},....}
      string machineName
      string machineColor
      string machineMaker

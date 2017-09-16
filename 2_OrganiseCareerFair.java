@@ -12,8 +12,36 @@
 //Identify Objects and Behaviors://
 
  Object : Organisor
- Attribute : name, emailAddr, billingAddr, phoneNumber, username, password, signature
- Behaviors : loginToAccount()
+ Attribute : name, emailAddr, phoneNumber, username, password
+ Behaviors : loginAccount(), setUpWebsite(), sendEmail(), reserveRoom()
+  
+ Object : Student
+ Attribute : studentName, studentEmailAddr, phoneNumber, username, password
+ Behaviors : loginAccount(), answerQuestionaire(), registerCareerFair(), giveFeedback(), sendEmail()
+  
+ Object : Company
+ Attribute : companyName, location, companyEmailAddr, jobTitle
+ Behaviors : respondInvitation(), giveFeedback(), sendEmail()
+  
+ Object : QuestionaireWebsite
+ Attribute : url
+ Behaviors : authorize()
+  
+ Object : Questionaire
+ Attribute : Question[] question
+ Behaviors : 
+   
+ Object : Organisor
+ Attribute : name, emailAddr, phoneNumber, username, password
+ Behaviors : loginToAccount(), setUpWebsite()
+  
+ Object : Organisor
+ Attribute : name, emailAddr, phoneNumber, username, password
+ Behaviors : loginToAccount(), setUpWebsite()
+  
+ Object : Organisor
+ Attribute : name, emailAddr, phoneNumber, username, password
+ Behaviors : loginToAccount(), setUpWebsite()
  
 
 
@@ -23,18 +51,17 @@
  Organisor yiteng
  QuestionaireWebsite questionwebsite
  Questionaire questionaire
- CarRentalSiteLoginPage reachnowloginpage
  CareerFairWebsite careerwebsite
  
  
- yiteng.setUpWebsite() -> Questionaire (input: question_01, question_02, ...)
+ yiteng.setUpWebsite() -> Questionaire (input: question[0], question[1], ...)
  yiteng.sendEmail() -> studentEmailAddr
- student.loginAccount() -> username, password -> questionairewebsite: return LoginConfirmation object
+ student.loginAccount() -> username, password -> questionairewebsite: authorize & return LoginConfirmation object
  student.answerQuestionaire() -> companyName, preferredOpenDate, jobTitle -> questionwebsite: return QuestionaireResult object
  yiteng.sendEmail() -> Invitation (input: companyEmailAddr, time, location, message) -> company: return InvitationResult object
  yiteng.reserveRoom()
  yiteng.setUpWebsite() -> openTime, fairLocation, companyName, jobTitle
- student.registerCareerFair -> studentName, studentEmailAddr, phoneNumber -> careerwebsite: return RegistrationResult object
+ student.registerCareerFair() -> studentName, studentEmailAddr, phoneNumber -> careerwebsite: return RegistrationResult object
  if(registration amount > room capacity)
  yiteng.reserveRoom()
  end

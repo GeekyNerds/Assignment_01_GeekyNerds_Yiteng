@@ -13,7 +13,7 @@
 
  Object : Hiker
  Attribute : name, emailAddr, billingAddr, phoneNumber, username, password, signature
- Behaviors : loginToAccount(), pressCarBrake(), pressCarAccelerate(), rotateSteerWheel(), makePayment()
+ Behaviors : loginToAccount(), pressCarBrake(), pressCarAccelerate(), rotateSteerWheel(), createOrder(), makePayment()
  
  Object : CarRentalSite
  Attribute : url, carColor, carMaker, priceRange, rentTimeRange, 
@@ -25,7 +25,15 @@
  
  Object : Car
  Attribute : carMaker, carColor, plateNumber
- Behaviors : 
+ Behaviors :
+
+ Object : CarRentOrderConfirmation
+ Attribute : orderConfirmMessage
+ Behaviors :
+
+ Object : CarRentPaidConfirmation
+ Attribute : paidConfirmMessage
+ Behaviors :
   
  Object : CreditCard
  Attribute : cardNumber, expireMonth, expireYear, securityCode
@@ -38,6 +46,10 @@
  Object : MapNavigator
  Attribute : navigatorName
  Behaviors : getRoute(), getNearbyPlaceOfInterest()
+  
+ Object : Route
+ Attribute : routeName
+ Behaviors : 
  
  Object : GasStation
  Attribute : gasStationName, gasStationLocation, gasPumpNumber, 
@@ -45,6 +57,14 @@
   
  Object : Gas
  Attribute : gasType, gasPrice, gasAmount
+ Behaviors : 
+
+ Object : GasOrderConfirmation
+ Attribute : orderConfirmMessage
+ Behaviors : 
+
+ Object : GasPaidConfirmation
+ Attribute : paidConfirmMessage
  Behaviors : 
  
  Object : Restaurant
@@ -55,6 +75,14 @@
  Attribute : mealName, mealPrice, mealAmount
  Behaviors :  
 
+ Object : MealOrderConfirmation
+ Attribute : orderConfirmMessage
+ Behaviors : 
+
+ Object : MealPaidConfirmation
+ Attribute : paidConfirmMessage
+ Behaviors : 
+
  Object : Park
  Attribute : parkName, pointOfInterest, openTime
  Behaviors : issueTicket()
@@ -62,11 +90,31 @@
  Object : Ticket
  Attribute : ticketPrice, ticketAmount
  Behaviors : 
+
+ Object : TicketOrderConfirmation
+ Attribute : orderConfirmMessage
+ Behaviors : 
+
+ Object : TicketPaidConfirmation
+ Attribute : paidConfirmMessage
+ Behaviors : 
  
  Object : HotelBookingSite
  Attribute : url, hotelList, checkInDate, checkOutDate, hotelPrice, 
- Behaviors : authorize()
+ Behaviors : authorize(), searchHotel() 
+ 
+ Object : Hotel
+ Attribute : name, hotelLocation
+ Behaviors : 
 
+ Object : HotelBookOrderConfirmation
+ Attribute : orderConfirmMessage
+ Behaviors : 
+
+ Object : HotelBookPaidConfirmation
+ Attribute : paidConfirmMessage
+ Behaviors : 
+ 
 
 //Sequence of Flow - Invoke Objects with Behaviors
  
@@ -74,20 +122,32 @@
  CarRentalSite reachnow
  CarRentalSiteLoginPage reachnowloginpage
  Car bmw
+ CarRentOrderConfirmation carorderconfirmmessage
+ CarRentPaidConfirmation carpaidconfirmmessage
  CreditCard visacard
  CreditCardCompany visa
  MapNavigator googlemaps
+ Route route
  GasStation chevron
  Gas gas
+ GasOrderConfirmation gasorderconfirmmessage
+ GasPaidConfirmation gaspaidconfirmmessage
  Restaurant kfc
  Menu menu
+ MealOrderConfirmation mealorderconfirmmessage
+ MealPaidConfirmation mealpaidconfirmmessage
  Park rainierPark
  Ticket ticket
+ TicketOrderConfirmation ticketorderconfirmmessage
+ TicketPaidConfirmation ticketpaidconfirmmessage
  HotelBookingSite expedia
+ Hotel hotel
+ HotelBookOrderConfirmation hotelbookorderconfirmmessage
+ HotelBookPaidConfirmation hotelbookpaidconfirmmessage
  
  //1.1. Rent a ReachNow BMW car using VISA credit card
- yiteng.loginToAccount() -> username, password -> reachnow : authorize & return LoginConfirmation object
- reachnow.searchCar() -> priceRange, carColor, carMaker,rentTimeRange -> reachnow : return Car object collection
+ yiteng.loginToAccount() -> username, password -> reachnow : authorize & return CarRentalSiteLoginPage object
+ reachnow.searchCar() -> priceRange, carColor, carMaker, rentTimeRange -> reachnow : return Car object collection
  yiteng.createOrder() -> Car(input: bmw) -> reachnow: return CarRentOrderConfirmation object 
  yiteng.makePayment() -> CreditCard (input: cardNumber, expireMonth, expireYear)-> visa.authorizeCard()
  reachnow : return CarRentPaidConfirmation object
@@ -126,4 +186,3 @@
  expedia : return HotelBookPaidConfirmation object
   
  
-

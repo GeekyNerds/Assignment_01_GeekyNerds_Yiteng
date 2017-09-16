@@ -1,11 +1,11 @@
 /*Scenario:  2. Organise a career fair(Suppose you are the organiser)
 
-2.1 Set up a questionaire website to collect student's preferred companies, career fair open dates, how many students willing to come  
-2.2 According to the questionaire result, invite companies, decide career fair open dates
-2.3 According to the invitation result, reserve room that meets company & student's need
-2.4 Set up a career fair website for student to see career fair information detail, register check-in ticket and receive update
-2.5 According to the registration result, decide whether further action is needed, such as "if a larger room is needed or not?"
-2.6 Collect students and companies feedbacks about this career fair.
+2.1 set up a questionaire website to collect student's preferred companies, career fair open dates, how many students willing to come  
+2.2 according to the questionaire result, invite companies, decide career fair open dates
+2.3 according to the invitation result, reserve room that meets company & student's need
+2.4 set up a career fair website for student to see career fair information detail, register check-in ticket and receive update
+2.5 according to the registration result, decide whether further action is needed, such as "if a larger room is needed or not?"
+2.6 collect students and companies feedbacks about this career fair.
 
 */
 

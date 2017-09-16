@@ -16,7 +16,7 @@
 
 */
 
-//Identify Object and Behaviors://
+//Identify Object and Behaviors:
 
 Object : CodeSharingPlatform
 Attribute : url, platformName, username, password
@@ -31,57 +31,57 @@ public class CodeSharingPlatform{
      string username;
      string password;
      
-     //authorize user login//
+     //authorize user login
      boolean authorizeUserLogin(){
      
      }
      
-     //clone download an existing repo into local working directory(workspace)//
+     //clone download an existing repo into local working directory(workspace)
      void clone(){
      
      }
      
-     //add local changes into stage (temporary storage area)//
+     //add local changes into stage (temporary storage area)
      void add(){
      
      }
      
-     //commit all the local changes from stage into local repo branch//
+     //commit all the local changes from stage into local repo branch
      void commit(){
      
      }
      
-     //push local repo branch into the remote repo branch//
+     //push local repo branch into the remote repo branch
      void push(){
      
      }
      
-     //pull to get the latest version of repo//
+     //pull to get the latest version of repo
      void pull(){
      
      }
      
-     //show difference between repo branches//
+     //show difference between repo branches
      string showBranchDifference(){
     
      }
      
-     //show difference between workspace and stage//
+     //show difference between workspace and stage
      string showWorkAndStageDifference(){
     
      }
      
-     //save all the change operations history into one place for track and management//
+     //save all the change operations history into one place for track and management
      string saveChangesHistory(){
     
      }
      
-     //add collaborator into repo//
+     //add collaborator into repo
      void addCollaborator(){
      
      }
      
-     //show user's contribution history//
+     //show user's contribution history
      string showContributionHistory(){
      
      }

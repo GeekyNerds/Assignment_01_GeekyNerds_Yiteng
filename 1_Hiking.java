@@ -1,10 +1,10 @@
 /*Scenario:  1. Hiking
  
- 1.1. Rent a ReachNow BMW car using VISA credit card
- 1.2. On the way, use Google Maps to find route to Chevron gas station, make payment using VISA card, then fill the gas
- 1.3. On the way, use Google Maps to find route to KFC restaurant, make payment using VISA card
- 1.4. Buy the ticket using VISA card at Mountain Rainier Park
- 1.5. Book Holiday Inn via Expedia website 
+ 1.1 rent a ReachNow BMW car using VISA credit card
+ 1.2 on the way, use Google Maps to find route to Chevron gas station, make payment using VISA card, then fill the gas
+ 1.3 on the way, use Google Maps to find route to KFC restaurant, make payment using VISA card
+ 1.4 buy the ticket using VISA card at Mountain Rainier Park
+ 1.5 book Holiday Inn via Expedia website 
  
 */
  
@@ -17,7 +17,7 @@
  
  Object : CarRentalSite
  Attribute : url, carColor, carMaker, priceRange, rentTimeRange, 
- Behaviors : searchCar(), sort(), compare() , placeTheOrder() 
+ Behaviors : searchCar(), sort(), compare(), placeTheOrder() 
  
  Object : CarRentalSiteLoginPage
  Attribute : welcomeMessage, accountInfo, accountSetting, 
@@ -25,7 +25,7 @@
  
  Object : Car
  Attribute : carMaker, carColor, plateNumber
- Behaviors : driveWheel()
+ Behaviors : 
   
  Object : CreditCard
  Attribute : cardNumber, expireMonth, expireYear, securityCode
@@ -39,13 +39,13 @@
  Attribute : navigatorName
  Behaviors : getRoute(), getNearbyPlaceOfInterest()
  
- Object : Gas
- Attribute : gasType, gasPrice, gasAmount
- Behaviors : 
- 
  Object : GasStation
  Attribute : gasStationName, gasStationLocation, gasPumpNumber, 
  Behaviors : outputGas()
+  
+ Object : Gas
+ Attribute : gasType, gasPrice, gasAmount
+ Behaviors : 
  
  Object : Restaurant
  Attribute : resName, resLocation
@@ -65,7 +65,7 @@
  
  Object : HotelBookingSite
  Attribute : url, hotelList, checkInDate, checkOutDate, hotelPrice, 
- Behaviors : 
+ Behaviors : authorize()
 
 
 //Sequence of Flow - Invoke Objects with Behaviors
@@ -78,8 +78,11 @@
  CreditCardCompany visa
  MapNavigator googlemaps
  GasStation chevron
+ Gas gas
  Restaurant kfc
+ Menu menu
  Park rainierPark
+ Ticket ticket
  HotelBookingSite expedia
  
  //1.1. Rent a ReachNow BMW car using VISA credit card

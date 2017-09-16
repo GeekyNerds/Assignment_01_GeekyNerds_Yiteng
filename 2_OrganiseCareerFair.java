@@ -1,9 +1,11 @@
 /*Scenario:  2. Organise a career fair(Suppose you are the organiser)
-2.1 Set up a questionaire website to collect student's preferred companies, career fair open dates, how many students willing to come  
-2.2 According to the questionaire result, invite companies, decide career fair open dates, reserve room that meet students'need
-2.3 Set up a career fair website for student to see career fair information detail, register check-in ticket and receive update
-2.4 
 
+2.1 Set up a questionaire website to collect student's preferred companies, career fair open dates, how many students willing to come  
+2.2 According to the questionaire result, invite companies, decide career fair open dates
+2.3 According to the invitation result, reserve room that meets company & student's need
+2.4 Set up a career fair website for student to see career fair information detail, register check-in ticket and receive update
+2.5 According to the registration result, decide whether further action is needed, such as "if a larger room is needed or not?"
+2.6 Collect students and companies feedbacks about this career fair.
 
 */
 
@@ -19,6 +21,24 @@
 //Sequence of Flow - Invoke Objects with Behaviors//
  
  Organisor yiteng
- CarRentalSite reachnow
+ QuestionaireWebsite questionwebsite
+ Questionaire questionaire
  CarRentalSiteLoginPage reachnowloginpage
-
+ CareerFairWebsite careerwebsite
+ 
+ 
+ yiteng.setUpWebsite() -> Questionaire (input: question_01, question_02, ...)
+ yiteng.sendEmail() -> studentEmailAddr
+ student.loginAccount() -> username, password -> questionairewebsite: return LoginConfirmation object
+ student.answerQuestionaire() -> companyName, preferredOpenDate, jobTitle -> questionwebsite: return QuestionaireResult object
+ yiteng.sendEmail() -> Invitation (input: companyEmailAddr, time, location, message) -> company: return InvitationResult object
+ yiteng.reserveRoom()
+ yiteng.setUpWebsite() -> openTime, fairLocation, companyName, jobTitle
+ student.registerCareerFair -> studentName, studentEmailAddr, phoneNumber -> careerwebsite: return RegistrationResult object
+ if(registration amount > room capacity)
+ yiteng.reserveRoom()
+ end
+ student.giveFeedback()
+ company.giveFeedback()
+  
+  

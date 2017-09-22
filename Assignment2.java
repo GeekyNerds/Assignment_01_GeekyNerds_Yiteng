@@ -44,7 +44,7 @@ public class Assignment2 {
 	}
 	
 	
-/*-------Question 1-------*/	
+/*-------Question 1: calculate salary-------*/	
 	public double employeeSalary(double hours) {
 		double salary = 0;
 		double hourTier1 = 36.0;
@@ -87,7 +87,7 @@ public class Assignment2 {
 	
 	
 	
-/*-------Question 2-------*/
+/*-------Question 2: input a number, add its digits-------*/
 	public int addDigits(int num) {
 		int result = num-((num-1)/9)*9;
 	    System.out.println("Digits adding result is "+result+" (input number "+num+")");
@@ -96,7 +96,7 @@ public class Assignment2 {
 	
 	
 	
-/*-------Question 3-------*/	
+/*-------Question 3: print perfect numbers-------*/	
 	public void printPerfectNumber(int n) {
 		int i,j,k;
 		for(i=2;i<n;i++) {
@@ -191,7 +191,7 @@ public class Assignment2 {
 	
 	
 	
-/*-------Question 6-------*/	
+/*-------Question 6: generate isosceles right triangle-------*/	
 	
 	// Method 1: 
 	public void GenerateIsoscelesTriangle_Method_A (int n) {

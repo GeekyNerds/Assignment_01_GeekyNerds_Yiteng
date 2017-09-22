@@ -88,8 +88,14 @@ public class Assignment2 {
 	
 	
 /*-------Question 2: input a number, add its digits-------*/
+	/* Solution idea: All the adding results are from 0,1,2,3,4,5,6,7,8,9, which is a periodic pattern repeating every 9 numbers, 
+           thus based on the every 9 numbers repeating pattern, 
+	   1. firstly find out the input number's nearest last multiples of 9: [(num-1)/9]*9;  e.g, number 21's nearest last multiples of 9 is 18
+	   2. secondly find out the distance between this input number and its nearest last multiples of 9: num-[(num-1)/9]*9; e.g, 21 - 18 = 3;
+	   3. the distance is the adding results. e.g. 21-18=3, 2+1=3 (number 21's the nearest last multiple of 9 is 18 )
+	 */
 	public int addDigits(int num) {
-		int result = num-((num-1)/9)*9;
+		int result = num-((num-1)/9)*9; 
 	    System.out.println("Digits adding result is "+result+" (input number "+num+")");
 		return result;
 	}

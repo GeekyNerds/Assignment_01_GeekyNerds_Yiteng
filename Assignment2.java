@@ -176,7 +176,8 @@ public class Assignment2 {
 	
 	
 /*-------Question 5: create Customer class and calculate customer's pizza order total price-------*/	
-	
+	"Map data structure" can be used for pairing "pizza type" and "pizza amount", 
+	the key and value pair in the Map data structure helps to achieve an high-efficiency searching and locating.
 	
 	class Customer {
 		String customerName;

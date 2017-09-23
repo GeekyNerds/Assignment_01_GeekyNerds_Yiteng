@@ -10,7 +10,7 @@ public class Assignment2 {
 		
 		// Run Question 2
 		System.out.println("------Question 2:------");
-		a2.addDigits(123);
+		a2.addDigits(21);
 		
 		// Run Question 3
 		System.out.println("------Question 3:------");

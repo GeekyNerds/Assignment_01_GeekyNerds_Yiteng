@@ -25,13 +25,13 @@ public class Assignment2 {
 		Pizza pizza3 = a2.new Pizza("cheese pizza", 5.0f, 1, 25.0);
         		// customers choose pizza
 		Customer customer1 = a2.new Customer("Serena", pizza1);
-        Customer customer2 = a2.new Customer("Harsha",pizza3);
+                Customer customer2 = a2.new Customer("Harsha",pizza3);
         		// calculate the order total price of customers 
-        double sumCustomer1 = customer1.pizza.pizzaPrice*customer1.pizza.pizzaAmount;
-        double sumCustomer2 = customer2.pizza.pizzaPrice*customer2.pizza.pizzaAmount;
+                double sumCustomer1 = customer1.pizza.pizzaPrice*customer1.pizza.pizzaAmount;
+                double sumCustomer2 = customer2.pizza.pizzaPrice*customer2.pizza.pizzaAmount;
         
-        System.out.println(""+customer1.customerName+" ordered "+customer1.pizza.pizzaType+", and the total price is "+sumCustomer1);
-        System.out.println(""+customer2.customerName+" ordered "+customer2.pizza.pizzaType+", and the total price is "+sumCustomer2);
+                System.out.println(""+customer1.customerName+" ordered "+customer1.pizza.pizzaType+", and the total price is "+sumCustomer1);
+                System.out.println(""+customer2.customerName+" ordered "+customer2.pizza.pizzaType+", and the total price is "+sumCustomer2);
 		
 		
 		// Run Question 6, here I put two ways to do this task.

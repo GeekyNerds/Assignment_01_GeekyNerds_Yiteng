@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
-public class Assignment33 {
+public class Assignment3 {
 	
 	public static void main(String[] args) {
-	Assignment33 a3 = new Assignment33();
+	Assignment3 a3 = new Assignment3();
 	
 	//run Question 3 remove vowels from string input
 	a3.removeVowelsFromString("aeiou & AEIOU");

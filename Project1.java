@@ -38,7 +38,7 @@ class Hangman {
 	
 	
 	void handleGuess(String guessLetter) {
-		
+		guessLetter = guessLetter.toLowerCase();
 		for(int x=0,compareTimes=0; x<chosedWordCopy.size(); x++) {
 		
 			if (guessLetter.equals(chosedWordCopy.get(x))) {

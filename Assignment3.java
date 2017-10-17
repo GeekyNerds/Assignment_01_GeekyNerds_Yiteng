@@ -65,6 +65,7 @@ public class Assignment3 {
 		Arrays.sort(charArrayS1); // sort by order
 		Arrays.sort(charArrayS2);
 		boolean isAnagram;
+		// You may check the length before parse String to char array, so it will return false earlier
 		if(charArrayS1.length!=charArrayS2.length) { //if length do not equal, not anagram 
 			isAnagram = false;
 			System.out.printf("%s, '%s' and '%s' are not anagram\n",isAnagram,s1,s2);

@@ -62,7 +62,7 @@ public class Assignment6 {
 		
 		
 		
-/*---------------------Question 2: Make the code compile---------------------------------*/
+/*-----------------------------Question 2: Make the code compile-----------------------------------------------*/
 		/* Two ways to make this code compile:
 		 * 1. add throws IOException to the parse(File file) method
 		 * 2. add try/catch clause to in around RandomAccessFile input.readLine() and input.close() 
@@ -85,5 +85,8 @@ public class Assignment6 {
 		  }  	
 	}
 	
-/*---------------------Question 3: ATM implementation ---------------------------------*/	
-/* Please check the Atm.java file uploaded separately in the Assignment_Yiteng folder. Thank you!*/
+/*-----------------------------Question 3: ATM implementation ---------------------------------------------------------*/	
+/* Please check the Atm.java and AtmJavaIO.java file uploaded separately in the Assignment_Yiteng folder. Thank you!*/
+
+
+

@@ -151,6 +151,7 @@ public class MidTermPartB {
 }	
 
 
+
 /*--------------------Q5: Maze Path (Extra Credit)----------------------------------------------*/
 	/*Solution Idea: recursive findPathRecursive() is used here to find each valid path position.
 	 * It returns true when valid path is found

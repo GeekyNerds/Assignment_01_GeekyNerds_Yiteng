@@ -376,6 +376,6 @@ class FindEqualSubArray {
 		return table[sum/2-sumMin][intArray.length];
 		
 	} 
-		
+	
 }
 
